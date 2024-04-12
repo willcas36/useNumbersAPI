@@ -2,27 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="/styles/main.css">
     <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
 <h1>Escoge un Número</h1>
 <h2> Type: <%= type %></h2>
 <section>
+    <form class="types" action="/type" method="post" class="type">
+        <button class="trivia button" type="submit" value="trivia" name="type">Trivia</button>
+        <button class="math button" type="submit" value="math" name="type">Math</button>
+        <button class="date button" type="submit" value="date" name="type">Date</button>
+    </form>
+    <hr>
     <form action="/resp" method="post">
         <input type="number" id="num" name="number">
         <button type="submit">Go</button>
     </form>
-    <hr>
-    <form action="/type" method="post" class="type">
-        <button type="submit" value="math" name="type">Math</button>
-        <button type="submit" value="trivia" name="type">Trivia</button>
-        <button type="submit" value="date" name="type">Date</button>
-        <button type="submit" value="math" name="type">Math</button>
-    </form>
 </section>
 <h2> <%= data %></h2>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

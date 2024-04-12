@@ -1,0 +1,30 @@
+body{
+    width: 50%;
+    margin: auto;
+}
+.types{
+    display: flex;
+    justify-content: space-between;
+}
+.button{
+    width: 20%;
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: lightgray
+}
+button:hover{
+    background-color: rgb(232, 232, 232);
+    transition: 0.5s;
+    box-shadow: 3px 3px lightgray;
+    animation: prueba 4s infinite;
+}
+.animate{
+    animation: prueba 4s infinite;
+}
+@keyframes prueba {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+}

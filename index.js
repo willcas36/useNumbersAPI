@@ -2,11 +2,12 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import axios from 'axios';
 
+
 const app = express();
 const port = 3000;
 
-var type= "trivia";
-var number;
+let type= "math";
+let number=0;
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -16,7 +17,9 @@ app.get("/",async (req, res) => {
     try {
         const response = await axios.get("http://numbersapi.com/random");
         const result = response.data;
-        res.render("index.ejs", { data: result, type: type});
+        const Type = type;
+        console.log(Type);
+        res.render("index.ejs", { data: result, type: Type});
         } catch (error) {
         console.error("Failed to make request:", error.message);
         res.render("index.ejs", {
@@ -24,8 +27,7 @@ app.get("/",async (req, res) => {
         });
         } 
 });
-app.post("/type",(req, res) => {
-console.log(req.body.type);
+app.post("/type",async (req, res) => {
 type = req.body.type;
 res.redirect("/num");
 });
@@ -36,9 +38,12 @@ res.redirect("/num");
 });
 app.get("/num",async (req, res) =>{
     try {
-        const response = await axios.get("http://numbersapi.com/"+number+"/"+type);
+        const response = await axios.get("http://numbersapi.com/"  +  number  +  "/"  +  type);
+        console.log(response.data);
+        const Type = type;
         const result = response.data;
-        res.render("index.ejs", { data: result, type: type});
+        console.log(Type);
+        res.render("index.ejs", { data: result, type: Type});
         } catch (error) {
         console.error("Failed to make request:", error.message);
         res.render("index.ejs", {
