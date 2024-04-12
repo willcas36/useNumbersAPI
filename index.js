@@ -43,7 +43,7 @@ app.get("/num",async (req, res) =>{
         const Type = type;
         const result = response.data;
         console.log(Type);
-        res.render("index.ejs", { data: result, type: Type});
+        res.render("index.ejs", { data: result, type: Type, number: number});
         } catch (error) {
         console.error("Failed to make request:", error.message);
         res.render("index.ejs", {

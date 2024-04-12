@@ -1,6 +1,20 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    background-color: #FFEFDE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
 body{
-    width: 50%;
-    margin: auto;
+    background-color: #FFF7EB;
+    padding: 40px 100px;
+    width: 35%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #757575;
 }
 .types{
     display: flex;
@@ -10,21 +24,38 @@ body{
     width: 20%;
     height: 35px;
     border-radius: 10px;
-    border: 1px solid black;
-    background-color: lightgray
+    border: 0.5px solid black;
+    background-color: #FFEFDE;
+}
+.numForm{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    gap: 30px;
+    margin: 30px ;
+}
+input[type="number"]{
+    width: 100%;
+    height: 55px;
+    text-align: center;
+    font-size: 2rem;
+    border: none;
+    background-color: inherit;
+}
+h1, h2{
+ text-align: center;   
+}
+h2.num{
+    font-size: 3rem;
 }
 button:hover{
     background-color: rgb(232, 232, 232);
     transition: 0.5s;
-    box-shadow: 3px 3px lightgray;
-    animation: prueba 4s infinite;
+    box-shadow: 3px 3px 5px #757575;
 }
 .animate{
-    animation: prueba 4s infinite;
+transition: 0.5;
+background-color: rgb(FFEFDE, green, blue);
+box-shadow: 3px 3px 5px #757575;
 }
-@keyframes prueba {
-    0%   {background-color: red;}
-    25%  {background-color: yellow;}
-    50%  {background-color: blue;}
-    100% {background-color: green;}
-}
+
